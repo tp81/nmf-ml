@@ -7,6 +7,7 @@ The algorithm is described in ["Efficient Blind Spectral Unmixing of Fluorescent
 
 To install, clone (git clone https://github.com/tp81/nmf-ml.git) into a new directory. You can test it in MATLAB by changing to that directory and running basic_test.m, which also shows a basic use case.
 
+Enjoy!
 [Thomas Pengo][0]
 
 ![alt text](http://thomaspengo.org/themes/thomas/logo.png "Thomas Pengo")
