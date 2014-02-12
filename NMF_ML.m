@@ -18,9 +18,10 @@
 % Based on the algorithm described in :
 % 
 % Pengo et al., EFFICIENT BLIND SPECTRAL UNMIXING OF FLUORESCENTLY LABELED 
-% SAMPLES USING MULTI-LAYER NON-NEGATIVE MATRIX FACTORIZATION, submitted
+% SAMPLES USING MULTI-LAYER NON-NEGATIVE MATRIX FACTORIZATION, PLoS ONE, 2013
 %
 % June 18th 2013  v1.0  First release
+% Feb  12th 2014        bugfix affecting flattening, non-rectangular, 3D 
 %
 function [Ac H xts] = NMF_ML(Y,m,varargin)
 n=size(Y,1);
@@ -68,6 +69,8 @@ if flatten
         Y=[]; H=[];
         for i=1:length(im)
             Y=cat(1,Y,double(im{i}(m)));
+        end
+	for i=1:length(im1)
             H=cat(1,H,double(im1{i}(m)));
         end
     end
