@@ -2,7 +2,7 @@
 %
 % Thomas Pengo, June 18th 2013 
 %
-% Requires DipImage (www.dipimage.org). Uncomment and change the following 
+% Requires DipImage (www.diplib.org). Uncomment and change the following 
 % two lines accordingly after installing.
 %
 % addpath C:\Program' Files'\DIPimage' 2.4.1'\
