@@ -23,7 +23,6 @@
 % June 18th 2013  v1.0  First release
 % Feb  12th 2014        bugfix affecting flattening, non-rectangular, 3D 
 %
-function [Ac H xts] = NMF_ML(Y,m,varargin)
 n=size(Y,1);
 
 p = inputParser;
@@ -167,6 +166,10 @@ for n=1:max_it
 end
 
 H=max(1E6*eps,pinv(Ac'*Ac +  alphaX)*Ac'*Y0);
+
+if nargout>3
+    im_out=reconstruct_image(m,H);
+end
 
 function im=reconstruct_image(m,Y)
 
