@@ -23,6 +23,7 @@
 % June 18th 2013  v1.0  First release
 % Feb  12th 2014        bugfix affecting flattening, non-rectangular, 3D 
 %
+function [Ac, H, xts, im_out] = NMF_ML(Y,m,varargin)
 n=size(Y,1);
 
 p = inputParser;
@@ -40,6 +41,9 @@ s = p.Results;
 if size(s.H0,1)~=size(s.A0,2)
     error('A0 must be matrix-multiplyable by H0. Rows of H0 are not equal to columns of A0.');
 end
+
+% Convert mask to a binary image
+m=dip_image(m,'bin');
 
 % Transform arguments to variables
 A0 = s.A0;
@@ -127,7 +131,7 @@ for n=1:max_it
         %Z = A*H + eps;
         %Z = diag(1./sqrt(var(Z,2)'))*Z;
         %kl = sum(sum(Y.*log(Y./Z + eps) - Y + Z));
-        if mod(n,20)==0
+        if mod(n,split_every)==0
             subplot(1,4,1)
                 plot(Y(end-1,:),Y(end,:),'.',H(end-1,:),H(end,:),'k.')
             subplot(1,4,2)
