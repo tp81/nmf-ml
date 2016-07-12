@@ -169,7 +169,7 @@ for n=1:max_it
     end
 end
 
-H=max(1E6*eps,pinv(Ac'*Ac +  alphaX)*Ac'*Y0);
+H=pinv(Ac'*Ac +  alphaX)*Ac'*Y0;
 
 if nargout>3
     im_out=reconstruct_image(m,H);
