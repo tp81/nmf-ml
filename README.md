@@ -1,5 +1,4 @@
-nmf-ml
-======
+## NMF-ML
 
 Multi-layer non-negative matrix factorization MATLAB implementation.
 
@@ -9,8 +8,6 @@ To install, clone (git clone https://github.com/tp81/nmf-ml.git) into a new dire
 
 Enjoy!
 [Thomas Pengo][0]
-
-![alt text](http://thomaspengo.org/themes/thomas/logo.png "Thomas Pengo")
 
 [0]: http://thomaspengo.org
 [1]: http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0078504
